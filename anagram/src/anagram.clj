@@ -1,11 +1,7 @@
-(ns anagram)
-((:require [namespace :as []
-            ]
-           
-           
-           
-           ))
-
+(ns anagram
+  (:require [clojure.string :as str]
+      )
+  )
 
 (defn anagram? [word word2]
   (cond (= word word2) false 
@@ -15,7 +11,7 @@
   )
  
 (defn anagrams-for [word prospect-list] ;; <- arglist goes here
-    (into [] (filter #(anagram? (clojure.string/lower-case word) %) (map clojure.string/lower-case prospect-list ) ))
+    (into [] (filter #(anagram? (str/lower-case word) %) (map str/lower-case prospect-list ) ))
 )
   
   
