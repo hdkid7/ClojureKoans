@@ -1,0 +1,228 @@
+{1 a,2 b}
+{:l 2}
+{1 a 2 b}
+{1 :a 2 :b}
+(contains? ["a" "b" "c"] "a")
+(contains? "a" ["a" "b" "c"])
+(contains? ["a" "b" "c"] "a")
+(contains? {1 "a"} "a")
+(contains? {"a" 2} "a")
+(contains? {"a" :a} "a")
+(map .toUpperCase "hello")
+(apply assoc {} "hello")
+(apply (assoc {} "hello"))
+(apply assoc {} "hello")
+(assoc {} "hello")
+(assoc {} "he")
+(apply assoc {} "he")
+(into [] "he")
+(apply into [] "he")
+(apply str into [] "he")
+(apply into [] "he")
+(into [] "he")
+(get (into [] "he") \h)
+(get (into [] "he") h)
+(split "" "hello")
+(str/split "" "hello")
+(split "hello" "")
+(clojure.string/split "hello" "")
+(clojure.string/split "hello" " ")
+(clojure.string/split " " "hello")
+(clojure.string/split #{} "hello")
+(clojure.string/split "hello" #"")
+(get (clojure.string/split "hello" #"") 0)
+(remove "a" ["a" "b"])
+(range 10)
+(count "word")
+(defn mapMaker [word]
+  (interleave (range (count word)) (clojure.core/split #"" word))
+  )
+(require '[clojure.string :as str])
+(defn mapMaker [word]
+  (interleave (range (count word)) (clojure.string/split #"" word))
+  )
+(mapMaker "hello")
+(defn mapMaker [word]
+  (interleave (range (count word)) (clojure.string/split word #""))
+(defn mapMaker [word]
+  (interleave (range (count word)) (clojure.string/split word #""))
+(defn mapMaker [word]
+  (interleave (range (count word)) (clojure.string/split word #""))
+  )
+(mapMaker "hello")
+((mapMaker "hello") 0)
+(defn mapMaker [word]
+  (into {} (interleave (range (count word)) (clojure.string/split word #"")))
+  )
+((mapMaker "hello") 0)
+(mapMaker "hello")
+(into {} (1 2 3))
+(into {} (1 2))
+(assoc {} '(2 3 4))
+(apply assoc {} '(2 3 4))
+(defn mapMaker [word]
+  (apply assoc {} (interleave (range (count word)) (clojure.string/split word #"")))
+  )
+(mapMaker "hello")
+((mapMaker "hello") 0)
+( = (mapMaker "hello") (mapMaker "hello"))
+( = (mapMaker "hello") {0 "h", 1 "e", 2 "l", 3 "l", 4 "o"})
+( = (mapMaker "hello") {0 "e", 1 "h", 2 "l", 3 "l", 4 "o"})
+(diff (mapMaker "hello") {0 "e", 1 "h", 2 "l", 3 "l", 4 "o"})
+exit
+(sort "lloskab")
+(frequencies "hello")
+(defn anagram? [word word2]
+   (= (frequencies word) (frequencies word2))
+  word2
+  )
+(defn anagrams-for [word prospect-list] ;; <- arglist goes here
+   (map #(anagram? word %) prospect-list)
+)
+(anagrams-for "hello" ["olleh" "lol" "coolio")
+(anagrams-for "hello" ["olleh" "lol" "coolio"])
+(defn anagrams-for [word prospect-list] ;; <- arglist goes here
+  (for [x prospect-list]
+    (anagram? word x)
+    )
+)
+(defn anagram? [word word2]
+  (if  (= (frequencies word) (frequencies word2))
+    word2
+    nil
+    )
+  )
+(anagrams-for "hello" ["olleh" "pool"])
+(defn anagrams-for [word prospect-list] ;; <- arglist goes here
+  (for [x prospect-list]
+   
+    x
+    )
+)
+(anagrams-for "hello" ["olleh" "pool"])
+(cons [] "hello")
+(conj [] "hello")
+(conj [] "hello" "lol")
+(defn anagram? [word word2]
+  (let [x []]
+     (if  (= (frequencies word) (frequencies word2))
+   (conj x word2)
+   nil)
+    )
+ 
+  )
+(defn anagrams-for [word prospect-list] ;; <- arglist goes here
+  (for [x prospect-list]
+    (anagram? word x)
+    )
+)
+(anagrams-for "hello" ["olleh" "fool" "loof"])
+(conj [] "")
+(defn anagram? [word word2]
+     (if  (= (frequencies word) (frequencies word2))
+   true
+   false)
+    )
+(defn anagrams-for [word prospect-list] ;; <- arglist goes here
+ 
+    (filter #(anagram? word %) prospect-list )
+    
+)
+(anagrams-for "hello" ["olleh" "yooo"])
+(= []
+         (anagram/anagrams-for "diaper" ["hello" "world" "zombies" "pants"])))
+(= []
+         (anagram/anagrams-for "diaper" ["hello" "world" "zombies" "pants"]))))
+(= []
+         (anagram/anagrams-for "diaper" ["hello" "world" "zombies" "pants"])))))
+(anagrams-for "diaper" ["hello" "world" "zombies" "pants"])
+(anagrams-for "diaper" ["hello" "world" "zombies" "pants" "iaperd])
+(anagrams-for "diaper" ["hello" "world" "zombies" "pants" "iaperd"])
+)
+)))
+(anagrams-for "diaper" ["hello" "world" "zombies" "pants" "iaperd"])
+(defn anagram? [word word2]
+  (cond (= word word2) false 
+        (= (clojure.string/lower-case (frequencies word)) (clojure.string/lower-case (frequencies word2))) true
+        :else false
+        )
+  )
+(anagram? "true" "true")
+(= ("BAN" "ban"))
+(= "BAN" "ban")
+(= "ban" "ban")
+eixt
+exit
+(defn anagram? [word word2]
+  (cond (= word word2) false 
+        (= (clojure.string/lower-case (frequencies word)) (clojure.string/lower-case (frequencies word2))) true
+        :else false
+        )
+  )
+ 
+(defn anagrams-for [word prospect-list] ;; <- arglist goes here
+    (vector (filter #(anagram? word %) prospect-list))
+)
+(= ["inlets"]
+         (let [coll ["enlists" "google" "inlets" "banana"]]
+           (anagrams-for "listen" coll)))
+(anagrams-for "listen" ["enlists" "google" "inlets" "banana"])
+(anagrams-for "gogleo" ["enlists" "google" "inlets" "banana"])
+(anagrams-for "listen" ["enlists" "google" "inlets" "banana"])
+(frequencies "listen")
+(frequencies "inlets")
+(= (frequencies "inlets") (frequencies "listen"))
+(= (clojure.string/lower-case (frequencies "inlets")) (frequencies "listen"))
+(clojure.string/lower-case (frequencies "inlets"))
+(clojure.string/lower-case "LISTEN")
+(defn anagrams-for [word prospect-list] ;; <- arglist goes here
+    (vector (filter #(anagram? (clojure.string/lower-case word) %) (map clojure.string/lower-case prospect-list ) ))
+)
+(defn anagram? [word word2]
+  (cond (= word word2) false 
+        (= (frequencies word) (frequencies word2) true
+        :else false
+        )
+  )
+)
+(defn anagram? [word word2]
+  (cond (= word word2) false 
+        (= (frequencies word) (frequencies word2)) true
+        :else false
+        )
+  )
+(= ["inlets"]
+         (let [coll ["enlists" "google" "inlets" "banana"]]
+           (anagrams-for "listen" coll)))
+(vector '(1 2 3))
+(into [] '(1 2 3))
+(conj '() 1)
+(conj '() 1 2 3)
+(conj [] 1 2 3)
+(defn anagrams-for [word prospect-list] ;; <- arglist goes here
+    (into [] (filter #(anagram? (clojure.string/lower-case word) %) (map clojure.string/lower-case prospect-list ) ))
+)
+(defn anagram? [word word2]
+  (cond (= word word2) false 
+        (= (frequencies word) (frequencies word2)) true
+        :else false
+        )
+  )
+(= ["inlets"]
+         (let [coll ["enlists" "google" "inlets" "banana"]]
+           (anagrams-for "listen" coll)))
+(is (= ["gallery" "regally" "largely"]
+         (let [coll ["gallery" "ballerina" "regally"
+                     "clergy"  "largely"   "leading"]]
+           (anagrams-for "allergy" coll))))
+(= ["gallery" "regally" "largely"]
+         (let [coll ["gallery" "ballerina" "regally"
+                     "clergy"  "largely"   "leading"]]
+           (anagram/anagrams-for "allergy" coll)))
+(= ["gallery" "regally" "largely"]
+         (let [coll ["gallery" "ballerina" "regally"
+                     "clergy"  "largely"   "leading"]]
+           (anagrams-for "allergy" coll)))
+user=> 
+lein test
+exit
