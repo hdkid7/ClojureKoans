@@ -1,0 +1,80 @@
+(count 121)
+(count "hello")
+(count (str 121))
+(:require [clojure.string as str])
+(:require '[clojure.string as str])
+(partition 121)
+(defn digitArray [num]
+  (map #(Integer/parseInt %) (str/split (str num) #" "))
+  )
+ (:require '[clojure.string as str])
+  (map #(Integer/parseInt %) (str/split (str num) #" "))
+(:require [clojure.string as str])
+  (map #(Integer/parseInt %) (str/split (str num) #" "))
+(split-at 1 "hello")
+(require '[clojure.string :as str])
+(str/split "Clojure is awesome!" #" ")
+(defn digitArray [num]
+  (map #(Integer/parseInt %) (str/split (str num) #" "))
+  )
+(digitArray 121)
+(str/split "121" #" ")
+(str/split "121" #"")
+(defn digitArray [num]
+  (map #(Integer/parseInt %) (str/split (str num) #""))
+  )
+(digitArray 121)
+(defn exp [x n]
+  (reduce * (repeat n x)))
+(exp 2 4)
+(defn amountOfDigits [num]
+  (count (str num))
+  )
+(defn exp [x n]
+  (reduce * (repeat n x)))
+(defn digitArray [num]
+  (map #(Integer/parseInt %) (str/split (str num) #""))
+  )
+(defn armstrong? [num] ;; <- arglist goes here
+ (= (reduce + (map #(exp % (amountOfDigits num)) (digitArray num))) num)
+)
+(armstrong? 153)
+(armstrong? 9)
+(armstrong? 3)
+(armstrong? 10)
+lein test
+(require 'armstrong-test)
+(require 'armstrong-numbers-test)
+(require '[clojure.string :as str])
+(str/split "Clojure is awesome!" #" ")
+lein test
+exit
+(require 'armstrong-numbers-test)
+(require armstrong-numbers-test)
+(require 'armstrong-numbers-test)
+(defn amountOfDigits [num]
+  (count (str num))
+  )
+(defn exp [x n]
+  (reduce * (repeat n x)))
+(defn digitArray [num]
+  (map #(Integer/parseInt %) (str/split (str num) #""))
+  )
+(defn armstrong? [num] ;; <- arglist goes here
+ (= (reduce + (map #(exp % (amountOfDigits num)) (digitArray num))) num)
+)
+lein test
+exit
+(require 'armstron-numbers-test)
+(use ns
+a
+)
+exit
+(clojure.test/run-tests 'armstrong-numbers-test)
+exit
+(require 'armstrong-numbers-test)
+(clojure.test/run-tests 'armstrong-number-test)
+(clojure.test/run-tests 'armstrong-numbers-test)
+(repeat 2 3)
+(repeat 4 9)
+exit
