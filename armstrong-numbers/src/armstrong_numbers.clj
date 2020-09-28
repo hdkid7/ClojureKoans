@@ -3,6 +3,7 @@
 
 
 (defn amountOfDigits [num]
+  
   (count (str num))
   )
 

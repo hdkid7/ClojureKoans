@@ -226,3 +226,93 @@ exit
 user=> 
 lein test
 exit
+ (:require [clojure.string :as str]
+      )
+(require '[clojure.string :as str])
+(defn transcribe [character]
+(cond
+  (= character "G") "C" 
+  (= character "C") "G"
+  (= character "T") "A"
+  (= character "A") "U"
+  :else "INVALID")
+  )
+(defn splitter
+  [string] 
+  (str/split string)
+)
+(defn to-rna [dna] ;; <- arglist goes here
+  (apply str (map transcribe (splitter dna))
+))
+(to-rna "GCTA")
+(defn transcribe [character]
+(cond
+  (= character "G") "C" 
+  (= character "C") "G"
+  (= character "T") "A"
+  (= character "A") "U"
+  :else "INVALID")
+  )
+(defn splitter
+  [string] 
+  (str/split string #" ")
+)
+(defn to-rna [dna] ;; <- arglist goes here
+  (apply str (map transcribe (splitter dna))
+))
+(to-rna "C")
+(to-rna "CGTA")
+(to-rna "GC")
+(splitter "hello")
+(defn transcribe [character]
+(cond
+  (= character "G") "C" 
+  (= character "C") "G"
+  (= character "T") "A"
+  (= character "A") "U"
+  :else "INVALID")
+  )
+(defn splitter
+  [string] 
+  (str/split string #"")
+)
+(defn to-rna [dna] ;; <- arglist goes here
+  (apply str (map transcribe (splitter dna))
+))
+(to-rna "CGT")
+(to-rna "UGCACCAGAAUU")
+(defn transcribe [character]
+(cond
+  (= character "G") "C" 
+  (= character "C") "G"
+  (= character "T") "A"
+  (= character "A") "U"
+  (= character "U") "A"
+  :else "INVALID")
+  )
+(defn splitter
+  [string] 
+  (str/split string #"")
+)
+(defn to-rna [dna] ;; <- arglist goes here
+  (apply str (map transcribe (splitter dna))
+))
+(to-rna "UGCACCAGAAUU")
+(defn transcribe [character]
+(cond
+  (= character "G") "C" 
+  (= character "C") "G"
+  (= character "T") "A"
+  (= character "A") "T"
+  (= character "U") "A"
+  :else "INVALID")
+  )
+(defn splitter
+  [string] 
+  (str/split string #"")
+)
+(defn to-rna [dna] ;; <- arglist goes here
+  (apply str (map transcribe (splitter dna))
+))
+(to-rna "ACGTGGTCTTAA")
+(to-rna "UGCACCAGAAUU")

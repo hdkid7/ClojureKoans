@@ -1,0 +1,82 @@
+(char 69)
+(char 60)
+(char 59)
+(char 67)
+(char 65)
+(char 80)
+(char 91)
+(char 90)
+(char 29)
+(char 20)
+(char 100)
+(char 97)
+(char 110)
+(char 120)
+(char 123)
+(char 122)
+(+ 12 (char \t))
+(char \T)
+(int "a")
+(map int "a")
+(char (map int "a"))
+(char 122)
+(char (get (map int "a") 0))
+(char (first (map int "a") 0))
+(char (first (map int "a")))
+(char + 20 (map int "a"))
+(char (+ 20 (map int "a")))
+(map int "a")
+(+ 20 (map int "a"))
+(char (first (+ 20 (map int "a"))))
+(char (+ 20 (first (map int "a"))))
+(char (+ 20 (first (map int "abv"))))
+(char (+ 20 (map int "abv")))
+(+ 20 (map int "abv"))
+(map (+ 20 %) (map int "abv")))
+(map (+ 20 %) (map int "abv"))))
+(map (+ 20 %) (map int "abv"))
+(map (+ 20 %1) (map int "abv"))
+(map #(+ 20 %1) (map int "abv"))
+(map #(char (+ 20 %1)) (map int "abv"))
+(str \b)
+(defn rotate [shiftInterger, string] ;; <- arglist goes here
+  ;; your code goes here
+  (map transform (str/split string #" "))
+  )
+(defn transform [shiftInterger,word]
+    (apply str  (map #(char (+ shiftInterger %1)) (map int word)))
+      )
+(defn rotate [shiftInterger, string] ;; <- arglist goes here
+  ;; your code goes here
+  (map transform (str/split string #" "))
+  )
+(:require [clojure.string :as str])
+(:require '[clojure.string :as str])
+(defn transform [shiftInterger,word]
+    (apply str (map #(char (+ shiftInterger %1)) (map int word)))
+      )
+(defn rotate [shiftInterger, string] ;; <- arglist goes here
+  ;; your code goes here
+  (map transform (str/split string #" "))
+  )
+(require '[clojure.string :as str])
+(defn rotate [shiftInterger, string] ;; <- arglist goes here
+  ;; your code goes here
+  (map transform (str/split string #" "))
+  )
+(rotate 2 "abc")
+(defn rotate [shiftInterger, string] ;; <- arglist goes here
+  ;; your code goes here
+  (map #(transform shiftInterger %) (str/split string #" "))
+)
+(rotate 2 "abc")
+(rotate 10 "abc")
+(rotate 10 "The quick brown fox")
+(rotate 2 "The quick brown fox")
+(defn rotate [shiftInterger, string] ;; <- arglist goes here
+  ;; your code goes here
+  (interpose " " (map #(transform shiftInterger %) (str/split string #" ")))
+)
+(rotate 2 "abd hjk")
+(apply str (rotate 2 "abd hjk"))
+exit

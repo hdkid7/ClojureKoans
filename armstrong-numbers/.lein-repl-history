@@ -78,3 +78,5 @@ exit
 (repeat 2 3)
 (repeat 4 9)
 exit
+ (:require [clojure.string :as str])
+(:require [clojure.string :as str])
